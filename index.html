@@ -1,0 +1,243 @@
+<html>
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Amiko|Roboto');
+body{
+  background-color: #F6E8EA;
+  font-size: 14;
+  margin-left: 50px;
+  margin-right: 50px;
+  width: 90%;
+  line-height: 1.5;
+  }
+  .heading {
+  font-family:'Roboto', sans-serif;
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 100;
+  padding: 15px;
+  background-color: #84DCCF ;
+  border: 5px  solid #22181C;
+  border-radius: 5px;
+  color: #EF626C;
+}
+#buttons{
+  margin: 0 auto;
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+#buttons a {
+  width: 20%;
+  background-color: #22181C;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+}
+#buttons a:active{
+  transform: translateY(2px);
+}
+.content-box {
+  width: 90%;
+  height: 150px;
+  margin: 0 auto;
+  visibility: hidden;
+  position: absolute;
+  font-family: Times;
+
+}
+.small {
+  width: 15%;
+}
+.content-box p {
+  text-align: center;
+}
+#story1 {
+  background-color: #EF626C;
+  line-height: 1.5;
+  font-size: 24;
+  font-family: Times;
+}
+#story2{
+  background-color: #84DCCF;
+  line-height: 1.5;
+  font-size: 24;
+  font-family: Times;
+}
+</style>
+<h1 class="heading"> Madlibs!!</h1>
+  <h2> How Do Madlibs Work? </h2>
+  <p> Madlibs are basically stories prepared in advance with a few words missing,which the participants fill out. The key is the participant doesn't know the story line before hand, so when they fill out the answes to the questions and make a story, it is interesting and usually doesn't make sense. But hey, that's what so fun about them!! </p>
+  <h3> Rules </h3>
+    <p> Pay attention to what the rules say. They will help clarify any questions one may have! </p>
+    <ol>
+    <li> Each button generates a specific story. Choose whichever story you would like.</li>
+    <li> Once you choose a button, one will have to answer the questions. </li>
+    <li> After one has answered all the questions, a tag will ask you "Ready for the message?" and you press close. </li>
+    <li> The story should appear once the close button is pressed. </li>
+    <li> To remove the box with the story, press the  "Remove Text" button. </li>
+    <li> Same rules apply to the second button. </li>
+    <li> If you want to repeat a storyline, you will have to refresh the page, unless you want to see the previous story you created. </li>
+    <li> Lastly, HAVE FUN!! (This is a chance to be creative and make a funny story.) </li>
+
+
+<div id="buttons">
+  <a onclick="complete1()"> Story 1 </a>
+  <a onclick="complete2()"> Story 2 </a>
+  <a onclick="hideAll()" class="small"> Remove Text </a>
+</div>
+  <div class="content-box" id="story1">
+</div>
+<div class="content-box" id="story2">
+</div>
+<script>
+var story1 = document.getElementById("story1");
+var story2 = document.getElementById("story2");
+function showStory1() {
+  story1.style.visibility = "visible";
+  story2.style.visibility = "hidden";
+}
+function showStory2() {
+  story2.style.visibility = "visible";
+  story1.style.visibility = "hidden";
+}
+function hideAll () {
+ story1.style.visibility = "hidden";
+  story2.style.visibility = "hidden";
+}
+function complete1(){
+showStory1();
+makeStory1();
+}
+function Questions(){
+  questions -=1;
+  questionsLeft = '[' + questions + ' questions left]';
+}
+var questions = 14;
+var questionsLeft = "";
+function makeStory1(){
+ questions = 14;
+ questionsLeft = ' [' + questions + ' questions left]';
+var noun1 = prompt('Please type a noun' + questionsLeft);
+Questions();
+var pronoun1 = prompt('Please type a pronoun' + questionsLeft);
+Questions();
+var noun2 = prompt('Please type a noun' + questionsLeft);
+Questions();
+var actionVerb1 = prompt('Please type an action verb' + questionsLeft);
+var adjective1 = prompt('Please type an action verb' + questionsLeft);
+Questions ();
+var place = prompt('Please type a place' + questionsLeft);
+Questions ();
+var formOFtransportation = prompt('Please type a form of transportation' + questionsLeft);
+Questions ();
+var typeOFfood = prompt('Please type a form of transportation' + questionsLeft);
+Questions ();
+var actionVerb2 = prompt('Please type of action verb ending with -ing. ' + questionsLeft);
+Questions();
+var pastVerb1 = prompt('Please type of past tense verb' + questionsLeft);
+Questions();
+var typeOFshelter = prompt('Please type a form of shelter. ' + questionsLeft);
+Questions ();
+var noun3 = prompt('Please type a noun' + questionsLeft);
+Questions();
+var feeling = prompt('Please type a feeling' + questionsLeft);
+Questions ();
+var adjective2 = prompt('Please type an adjective' + questionsLeft);
+Questions ();
+alert('All done. Ready for the message?');
+var sentence = noun1 + ' walked down the street.';
+var sentence2 = pronoun1 + ' did not have anything to do until '; sentence2 += noun2 + ' came up.';
+var sentence3 = ' They ' + actionVerb1; sentence3 += ' and they had a(n) ' + adjective1; sentence3 +=' time.';
+var sentence4 = ' They planned a trip to ' + place; sentence += '.';
+var sentence5 = ' They took a(n) ' + formOFtransportation; sentence5 += '.';
+var sentence6 = ' They ate ' + typeOFfood; sentence6 += ' while, ' + actionVerb2; sentence6 +='.';
+var sentence7 = ' They went to the park, but something happened.';
+var sentence8 = ' A person had just ' + pastVerb1; sentence8 += ' which ended their night pretty quickly.';
+var sentence9 = ' They were walking back to the ' + typeOFshelter; sentence9 += ' when they heard a noise.';
+var sentence10 = ' It was a ' + noun3; sentence10 += '.';
+var sentence11 = ' They felt ' + feeling; sentence11 += ' because they were ' + adjective2; sentence11 += '.';
+story1.innerHTML = story1.innerHTML + (sentence);
+story1.innerHTML = story1.innerHTML + (sentence2);
+story1.innerHTML = story1.innerHTML + (sentence3);
+story1.innerHTML = story1.innerHTML + (sentence4);
+story1.innerHTML = story1.innerHTML + (sentence5);
+story1.innerHTML = story1.innerHTML + (sentence6);
+story1.innerHTML = story1.innerHTML + (sentence7);
+story1.innerHTML = story1.innerHTML + (sentence8);
+story1.innerHTML = story1.innerHTML + (sentence9);
+story1.innerHTML = story1.innerHTML + (sentence10);
+story1.innerHTML = story1.innerHTML + (sentence11);
+}
+var questions = 14;
+var questionsLeft = "";
+function complete2(){
+showStory2();
+makeStory2();
+}
+function makeStory2(){
+  questions = 14;
+  questionsLeft = ' [' + questions + ' questions left]';
+ var pronoun2 = prompt('Please type a pronoun' + questionsLeft);
+ Questions();
+ var actionVerb3 = prompt('Please type an action verb ' + questionsLeft);
+ Questions();
+ var adjective3 = prompt('Please type an adjective ' + questionsLeft);
+ Questions();
+ var name = prompt('Please type a name ' + questionsLeft);
+ Questions();
+ var adjective4 = prompt('Please type an adjective ' + questionsLeft);
+ Questions();
+ var actionVerb4 = prompt('Please type an action verb ' + questionsLeft);
+ Questions();
+ var adverb = prompt('Please type an adverb ' + questionsLeft);
+ Questions();
+ var pronoun3 = prompt('Please type a pronoun ' + questionsLeft);
+ Questions();
+ var adjective5 = prompt('Please type an adjective ' + questionsLeft);
+ Questions();
+ var pastVerb2 = prompt('Please type a past tense verb ' + questionsLeft);
+ Questions();
+ var place2 = prompt('Please type a place ' + questionsLeft);
+ Questions();
+ var name2 = prompt('Please type a name ' + questionsLeft);
+ Questions();
+ var pastVerb3 = prompt('Please type a past tense verb ' + questionsLeft);
+ Questions();
+ var adjective6 = prompt('Please type an adjective ' + questionsLeft);
+ Questions();
+ alert('All done. Ready for the message?');
+ var sentence12 = ' It all started when ' + pronoun2; sentence12 += + actionVerb3; sentence12 +='.';
+ var sentence13 = ' It was a(n) ' + adjective3; sentence13 += ' day.';
+ var sentence14 = ' Everything was normal until ' + name; sentence14 += ' opened their mouth.';
+ var sentence15 = ' The words that came from their mouth was ' + adjective4; sentence15 += '.';
+ var sentence16 = ' It ' + actionVerb4; sentence16 += 'everyone.';
+ var sentence17 = ' People stood still as they processed what happened and then they started to disperse.';
+ var sentence18 = ' Oh well.';
+ var sentence19 = ' The day proceeded ' + adverb; sentence19 += '.';
+ var sentence20 = pronoun3 + ' continued on with the day but then they became ' + adjective5; sentence20 += ', so they'; sentence20 += pastVerb2 + ','; sentence20 += ' which led them to '
+ + place2;  sentence20 += '.';
+ var sentence21 = ' Thet saw ' + name2;  sentence21 += ' there and ' + pastVerb3; sentence21 += '.';
+ var sentence22 = ' It was very ' + adjective6; sentence22 += '.';
+ var sentence23 = ' They went their separate ways.';
+
+ story2.innerHTML = story2.innerHTML + (sentence12);
+ story2.innerHTML = story2.innerHTML + (sentence13);
+ story2.innerHTML = story2.innerHTML + (sentence14);
+ story2.innerHTML = story2.innerHTML + (sentence15);
+ story2.innerHTML = story2.innerHTML + (sentence16);
+ story2.innerHTML = story2.innerHTML + (sentence17);
+ story2.innerHTML = story2.innerHTML + (sentence18);
+ story2.innerHTML = story2.innerHTML + (sentence19);
+ story2.innerHTML = story2.innerHTML + (sentence20);
+ story2.innerHTML = story2.innerHTML + (sentence21);
+ story2.innerHTML = story2.innerHTML + (sentence22);
+ story2.innerHTML = story2.innerHTML + (sentence23);
+ }
+
+</script>
+</html>
